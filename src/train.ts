@@ -6,14 +6,14 @@ Shunday function tuzing, u string qabul qilib teskari qilib return qilsin
 MASALAN: gerReverse("hello") return qiladi "olleh" */
  
 
-function hey({ harf }: { harf: string; }): any {
+function harfniTeskari({ harf }: { harf: string; }): any {
     if (harf === "") 
     return "";
     else 
-    return hey({ harf: harf.substr(1) }) + harf.charAt(0);
+    return harfniTeskari({ harf: harf.substr(1) }) + harf.charAt(0);
   }
   let harf = "hello";
-  const natija = hey({ harf });
+  const natija = harfniTeskari({ harf });
   console.log(natija); 
 
 
