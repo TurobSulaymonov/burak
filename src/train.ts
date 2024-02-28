@@ -1,6 +1,14 @@
 
 
 console.log("Hello World");
+
+// H task
+
+/* 
+shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib,
+ faqat positive qiymatlarni olib string holatda return qilsin
+MASALAN: getPositive([1, -4, 2]) return qiladi "12"
+*/
 function getPositive(arr: number[]): string {
     let result: string = "";
   
@@ -13,10 +21,10 @@ function getPositive(arr: number[]): string {
     return result;
   }
   
-  // Misol:
+  
   let array: number[] = [1, -4, 2];
   let resultString: string = getPositive(array);
-  console.log(resultString); // "12"
+  console.log(resultString); 
   
 
 
