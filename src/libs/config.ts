@@ -1,0 +1,1 @@
+export const MORGAN_FORMAT = ':method :url responce-time [:status] \n';

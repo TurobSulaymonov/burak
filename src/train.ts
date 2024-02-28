@@ -1,11 +1,42 @@
+
+
 console.log("Hello World");
+function getPositive(arr: number[]): string {
+    let result: string = "";
+  
+    for (let i: number = 0; i < arr.length; i++) {
+      if (arr[i] > 0) {
+        result += arr[i].toString();
+      }
+    }
+  
+    return result;
+  }
+  
+  // Misol:
+  let array: number[] = [1, -4, 2];
+  let resultString: string = getPositive(array);
+  console.log(resultString); // "12"
+  
+
+
+
+
+
+  /* Projects Standarts: 
+  - Logging standarts
+  - naming standards
+       function, method, variable 
+  
+  
+  */
 
 // H task
 /* 
 Shunday function tuzing, u string qabul qilib teskari qilib return qilsin
 MASALAN: gerReverse("hello") return qiladi "olleh" */
  
-
+/* 
 function harfniTeskari({ harf }: { harf: string; }): any {
     if (harf === "") 
     return "";
@@ -14,7 +45,7 @@ function harfniTeskari({ harf }: { harf: string; }): any {
   }
   let harf = "hello";
   const natija = harfniTeskari({ harf });
-  console.log(natija); 
+  console.log(natija);  */
 
 
 
