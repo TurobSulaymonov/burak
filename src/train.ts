@@ -10,15 +10,15 @@ shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul 
 MASALAN: getPositive([1, -4, 2]) return qiladi "12"
 */
 function getPositive(arr: number[]): string {
-    let result: string = "";
+    let natija: string = "";
   
     for (let i: number = 0; i < arr.length; i++) {
       if (arr[i] > 0) {
-        result += arr[i].toString();
+        natija += arr[i].toString();
       }
     }
   
-    return result;
+    return natija;
   }
   
   
