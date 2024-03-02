@@ -2,28 +2,28 @@ import {ObjectId} from "mongoose"
 import { MemberStatus, MemberType } from "../enums/member.enum";
 
 export interface Member {
-    _id: ObjectId;
+    _id : ObjectId;
     memberType: MemberType;
     memberStatus: MemberStatus;
     memberNick: string;
     memberPhone: string;
-    memberPassword: string;
+    memberPassword?: string;
     memberAddress?: string;
     memberDesc?: string;
     memberImage?: string;
     memberPoints: number;
-    createAt: Date;
-    updatedAt: Date;
+    createdAt: Date;
+    updateAt: Date;
 }
 
 export interface MemberInput {
     memberType?: MemberType;
-    memberStatus?: MemberStatus;
-    memberNick: String;
-    memberPhone: String;
-    memberPassword: String;
-    meberAddress?: String;
-    memberDesc?: String;
-    memberImage?: String;
-    memberPoints?: number;
+  memberStatus?: MemberStatus;
+  memberNick: string;
+  memberPhone: string;
+  memberPassword: string;
+  memberAddress?: string;
+  memberDesc?: string;
+  memberImage?: string;
+  memberPoints?: number;
 }
