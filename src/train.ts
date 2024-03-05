@@ -2,6 +2,36 @@
 
 console.log("Hello World");
 
+// I task
+/* 
+Shunday function tuzing, unga string argument pass bolsin.
+Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
+MASALAN: getDigits("m14i1t") return qiladi "141"
+*/
+function harfTopish(harf: string): string {
+  let natija: string = "";
+
+  for (let i: number = 0; i < harf.length; i++) {
+    if (/\d/.test(harf[i])) {
+      natija += harf[i].toString();
+    }
+  }
+
+  return natija;
+}
+
+
+let resultString: string = harfTopish("m14i1t");
+console.log(resultString);
+
+
+
+
+
+
+
+
+
 // H task
 
 /* 
@@ -9,7 +39,7 @@ shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul 
  faqat positive qiymatlarni olib string holatda return qilsin
 MASALAN: getPositive([1, -4, 2]) return qiladi "12"
 */
-function getPositive(arr: number[]): string {
+/* function getPositive(arr: number[]): string {
     let natija: string = "";
   
     for (let i: number = 0; i < arr.length; i++) {
@@ -24,7 +54,7 @@ function getPositive(arr: number[]): string {
   
   let array: number[] = [1, -4, 2];
   let resultString: string = getPositive(array);
-  console.log(resultString); 
+  console.log(resultString);  */
   
 
 
