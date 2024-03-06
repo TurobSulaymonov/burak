@@ -6,10 +6,10 @@ const routerAdmin = express.Router();
 routerAdmin.get("/", restaurantController.goHome);
 routerAdmin
 .get("/login", restaurantController.getLogin)
-.post("/login", restaurantController.processLogin);
+.post("/login", restaurantController.procesLogin);
 routerAdmin
 .get("/signup", restaurantController.getSignup)
-.post("/signup", restaurantController.processSignup);
+.post("/signup", restaurantController.procesSignup);
 
 /* Product */
 
