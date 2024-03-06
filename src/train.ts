@@ -24,9 +24,7 @@ function harfTopish(harf: string): string {
 let resultString: string = harfTopish("m14i1t");
 console.log(resultString);
 
-const text = "Hello";
-const hasDigit = /\d/.test(text);
-console.log(hasDigit); // Natija: true
+
 
 
 
