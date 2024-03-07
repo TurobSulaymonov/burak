@@ -46,7 +46,7 @@ const member = await this.memberModel
 .exec();
 if(!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
 
-const isMatch = await bcrypt.compare(
+const isMatch: boolean = await bcrypt.compare(
 input.memberPassword,
 member.memberPassword
 );
