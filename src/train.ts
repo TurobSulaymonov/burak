@@ -1,6 +1,31 @@
 
 
 console.log("Hello World");
+// H task
+/* 
+Shunday function yozing, u string qabul qilsin va 
+string ichidagi eng uzun sozni qaytarsin.
+MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
+*/
+
+function sozTopish(inputString: string): string {
+ const words: string[] = inputString.split(" ");
+   let longestWord: string = "";
+  for (const word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+
+  return longestWord;
+}
+
+
+const exampleString: string = "I come from Uzbekistan";
+const result: string = sozTopish(exampleString);
+console.log(result);
+
+
 
 // I task
 /* 
@@ -8,7 +33,7 @@ Shunday function tuzing, unga string argument pass bolsin.
 Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
 MASALAN: getDigits("m14i1t") return qiladi "141"
 */
-function harfTopish(harf: string): string {
+/* function harfTopish(harf: string): string {
   let natija: string = "";
 
   for (let i: number = 0; i < harf.length; i++) {
@@ -23,7 +48,7 @@ function harfTopish(harf: string): string {
 
 let resultString: string = harfTopish("m14i1t");
 console.log(resultString);
-
+ */
 
 
 
