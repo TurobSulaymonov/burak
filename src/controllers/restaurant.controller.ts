@@ -12,13 +12,16 @@ restaurantController.goHome = (req: Request, res: Response) => {
     res.render("home");
  } catch (err){
     console.log("Error, goHome", err);
+    res.redirect("/admin");
  }
 };
 restaurantController.getSignup = (req: Request, res: Response) => {
    try{
       res.render("signup");
    } catch (err){
-      console.log("Error, getSign up", err);
+      console.log("Error, getSignup", err);
+      res.redirect("/admin");
+
    }
   };
 restaurantController.getLogin = (req: Request, res: Response) => {
@@ -26,6 +29,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
        res.render("login");
     } catch (err){
        console.log("Error, getLogin", err);
+       res.redirect("/admin");
     }
    };
  
@@ -46,10 +50,13 @@ restaurantController.getLogin = (req: Request, res: Response) => {
       })
 
       
-      } catch (error) {
-        console.log("Error, proccesSignup", error);
-        res.send(error);
+      } catch (err) {
+        console.log("Error, proccesSignup", err);
+        const message = 
+         err instanceof Error ? err.message  : Message.SOMETHING_WENT_WRONG;
+         res.send(`<script>alert("${message}"): window.location.replace("admin/signup")</script>`);
       }
+   
     };
    restaurantController.procesLogin = async (req: AdminRequest, res: Response) => {
       try{
@@ -67,7 +74,24 @@ restaurantController.getLogin = (req: Request, res: Response) => {
              
       } catch (err){
          console.log("Error, procesLogin", err);
-         res.send(err);
+         const message = 
+         err instanceof Error ? err.message  : Message.SOMETHING_WENT_WRONG;
+         res.send(`<script>alert("${message}"): window.location.replace("admin/login")</script>`);
+      }
+     };
+
+     restaurantController.logout = async (req: AdminRequest, res: Response) => {
+      try{
+         console.log("logout");
+         req.session.destroy( function () {
+            res.redirect("/admin");
+         });
+      
+
+             
+      } catch (err){
+         console.log("Error, procesLogin", err);
+         res.redirect("/admin")
       }
      };
      
