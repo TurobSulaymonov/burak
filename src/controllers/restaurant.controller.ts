@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 import {T} from "../libs/types/common";
 import MemberService from "../models/Member.service";
-import { LoginInput, MemberInput } from "../libs/types/member";
+import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum";
 const memberService = new MemberService;
 const restaurantController: T = {};
@@ -28,7 +28,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
     }
    };
  
-   restaurantController.procesSignup = async (req: Request, res: Response) => {
+   restaurantController.procesSignup = async (req: AdminRequest, res: Response) => {
       try {
          console.log("proccesSignup");
     
@@ -38,13 +38,18 @@ restaurantController.getLogin = (req: Request, res: Response) => {
          
       // TODO SESSIONS
 
-        res.send(result);  
+      req.session.member = result
+      req.session.save(function() {
+         res.send(result)
+      })
+
+      
       } catch (error) {
         console.log("Error, proccesSignup", error);
         res.send(error);
       }
     };
-   restaurantController.procesLogin = async (req: Request, res: Response) => {
+   restaurantController.procesLogin = async (req: AdminRequest, res: Response) => {
       try{
          console.log("processLogin");
            const input: LoginInput = req.body,
@@ -52,7 +57,12 @@ restaurantController.getLogin = (req: Request, res: Response) => {
          
          // TODO SESSIONS
 
-              res.send(result);
+         req.session.member = result
+      req.session.save(function() {
+         res.send(result)
+      })
+
+             
       } catch (err){
          console.log("Error, procesLogin", err);
          res.send(err);
