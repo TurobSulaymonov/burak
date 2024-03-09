@@ -90,7 +90,8 @@ catch(err) {
 }
 public async procesLogin(input: LoginInput): Promise<Member> {
 const member = await this.memberModel
-.findOne({memberNick: input.memberNick},
+.findOne(
+  {memberNick: input.memberNick},
 { memberNick: 1, memberPassword: 1 }
 )
 .exec();
