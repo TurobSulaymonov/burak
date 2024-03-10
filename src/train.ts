@@ -8,8 +8,7 @@ string ichidagi unli harflar sonini qaytarsin.
 MASALAN: countVowels("string") return 1;
 */
 
-
-function unliTopish(str: string): number {
+ function unliTopish(str: string): number {
 
   const vowels: string[] = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 
@@ -23,7 +22,7 @@ function unliTopish(str: string): number {
 
   return count; 
 }
-console.log(unliTopish("O'zbekiston"));
+console.log(unliTopish("O'zbekiston")); 
 
 /* 
 Shunday function yozing, u string qabul qilsin va 
@@ -31,7 +30,7 @@ string ichidagi eng uzun sozni qaytarsin.
 MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
 */
 
-/* function sozTopish(inputString: string): string {
+/*  function sozTopish(inputString: string): string {
  const words: string[] = inputString.split(" ");
    let longestWord: string = "";
   for (const word of words) {
@@ -46,7 +45,7 @@ MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
 
 const exampleString: string = "I come from Uzbekistan";
 const result: string = sozTopish(exampleString);
-console.log(result); */
+console.log(result);  */
 
 
 
