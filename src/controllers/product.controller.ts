@@ -24,8 +24,7 @@ productController.getAllProducts = async (req: Request, res: Response) => {
     try {
        console.log("createNewProducts");
       
-      //TODO TOKENS
- 
+       res.send("DONE");
     } catch (err) {
       console.log("Error, createNewProducts", err);
       if(err instanceof Errors) res.status(err.code).json(err);
@@ -37,7 +36,7 @@ productController.getAllProducts = async (req: Request, res: Response) => {
     try {
        console.log("updateChosenProducts");
       
-      //TODO TOKENS
+    
  
     } catch (err) {
       console.log("Error, updateChosenProducts", err);
