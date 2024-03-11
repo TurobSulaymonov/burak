@@ -3,6 +3,7 @@ import { T } from "../libs/types/common";
 import Errors from "../libs/Error";
 import ProductService from "../models/Product.service";
 
+
 const productService = new ProductService;
 
 const productController: T = {};

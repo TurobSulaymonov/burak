@@ -1,4 +1,4 @@
-import {Request, Response} from "express";
+import {NextFunction, Request, Response} from "express";
 import {T} from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
@@ -97,16 +97,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
      
      restaurantController.checkAuthSession = async (req: AdminRequest, res: Response) => {
       try{
-         /* console.log("processLogin");
-           const input: LoginInput = req.body,
-              result = await memberService.checkAuthSession(input);
-         
-         // TODO SESSIONS
-
-         req.session.member = result
-      req.session.save(function() {
-         res.send(result )
-      })*/
+       
      
       console.log("checkAuthSession");
       if(req.session?.member) 
@@ -119,5 +110,27 @@ restaurantController.getLogin = (req: Request, res: Response) => {
          res.send(err);
       }
      };
+
+      restaurantController.verifyRestaurant = (
+      req: AdminRequest,
+      res: Response,
+      next: NextFunction
+
+     ) => {
+     
+      if(req.session?.member?.memberType === MemberType.RESTAURANT) {
+         req.member = req.session.member;
+         next();
+      }
+     
+   else{
+      const message = Message.NOT_AUTHENTICATED;
+      res.send(
+         `<script> alert("${message}"); window.location.replace('/admin/login'); </script>`
+      );
+   }
+
+     }; 
+
 
    export default restaurantController ;
