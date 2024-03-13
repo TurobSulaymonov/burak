@@ -1,5 +1,8 @@
 import mongoose, {Schema} from "mongoose";
-import { ProductColletion, ProductSize, ProductStatus, ProductVolume } from "../libs/enums/product.enum";
+import { ProductCollection,
+    ProductSize,
+     ProductStatus, 
+     ProductVolume } from "../libs/enums/product.enum";
 const productSchema = new Schema (
     {
     productStatus: {
@@ -8,9 +11,9 @@ const productSchema = new Schema (
         default: ProductStatus.PAUSE,
         
     },
-     productColletion: {
+     productCollection: {
         type: String,
-        enum: ProductColletion,
+        enum: ProductCollection,
         required: true,
      },
      productName: {
@@ -21,7 +24,7 @@ const productSchema = new Schema (
       type: String,
       required: true,
      },
-     productCount:{
+     productLeftCount:{
         type: String,
         required: true,
      },
@@ -32,16 +35,14 @@ const productSchema = new Schema (
         
      },
      productVolume: {
-        type: String,
+        type: Number,
         enum: ProductVolume,
         default: ProductVolume.ONE,
      },
      productDesc:{
         type: String,
-        required: true,
-
-     },
-     productImage: { 
+      },
+     productImages: { 
         type: [String],
         default: [],
      },

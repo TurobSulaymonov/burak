@@ -17,7 +17,7 @@ export enum ProductStatus{
     PROCESS = "PROCESS",
     DELETE = "DELETE",
 }
-export enum  ProductColletion{
+export enum  ProductCollection{
     DISH = "DISH",
     SALAD = "SALAD",
     DESERT = "DESERT",

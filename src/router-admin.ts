@@ -23,14 +23,16 @@ routerAdmin.get("/check-me", restaurantController.checkAuthSession);
 routerAdmin.get("/product/all",
 restaurantController.verifyRestaurant,
 productController.getAllProducts);
-routerAdmin.post(
+routerAdmin
+.post(
 "/product/create",
 restaurantController.verifyRestaurant,
 // uploadProductsImage.single("productImage"),
 //makeUploader("products").single("productImage"),
-makeUploader("products").array("productImage", 5),
-productController.createNewProducts);
-routerAdmin.post("/product/:id", 
+makeUploader("products").array("productImages", 5),
+productController.createNewProduct);
+routerAdmin
+.post("/product/:id", 
 restaurantController.verifyRestaurant,
 productController.updateChosenProducts);
 
