@@ -53,16 +53,17 @@ productController.getAllProducts = async (req: Request, res: Response) => {
   productController.updateChosenProducts = async (req: Request, res: Response) => {
     try {
        console.log("updateChosenProducts");
-      
-    
+       const id = req.params.id;
+       console.log("id", id);
+
+       const result = await productService.updateChosenProducts(id, req.body)
+
+    res.status(HttpCode.OK).json({data: result});
  
     } catch (err) {
       console.log("Error, updateChosenProducts", err);
-      const message = 
-      err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
-    
-      // res.json({ });  
-      res.send(`<script> alert("${message}");window.local.replace("admin/product/all) </script>`)
+      if(err instanceof Errors) res.status(err.code).json(err);
+      else res.status(Errors.standard.code).json(Errors.standard);
     }
   };
 export default productController;

@@ -11,41 +11,50 @@ const productSchema = new Schema (
         default: ProductStatus.PAUSE,
         
     },
+
      productCollection: {
         type: String,
         enum: ProductCollection,
         required: true,
      },
+
      productName: {
         type: String,
         required: true,
      },
+
      productPrice: {
       type: String,
       required: true,
      },
+
      productLeftCount:{
         type: String,
         required: true,
      },
+     
      productSize:{
         type: String,
         enum: ProductSize,
         default: ProductSize.NORMAL,
         
      },
+     
      productVolume: {
         type: Number,
         enum: ProductVolume,
         default: ProductVolume.ONE,
      },
+
      productDesc:{
         type: String,
       },
+
      productImages: { 
         type: [String],
         default: [],
      },
+     
      productViews:{
      type:Number,
      default: 0,
