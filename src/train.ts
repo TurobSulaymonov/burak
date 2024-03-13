@@ -1,6 +1,32 @@
 
 
 console.log("Hello World");
+// L task
+/* 
+Shunday function yozing, u string qabul qilsin va 
+string ichidagi hamma sozlarni chappasiga yozib va 
+sozlar ketma-ketligini buzmasdan stringni qaytarsin.
+MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
+*/
+
+function sozniTeskariOqish(harf: string): string {
+  const words: string[] = harf.split(' ');
+  const harflar: string[] = [];
+
+  for (const word of words) {
+      const reversedWord = word.split('').reverse().join('');
+      harflar.push(reversedWord);
+  }
+
+  return harflar.join(' ');
+}
+
+
+console.log(sozniTeskariOqish("I come from Uzbekistan!"));
+
+
+
+
 // k task
 /* 
 Shunday function yozing, u string qabul qilsin va 
@@ -8,7 +34,7 @@ string ichidagi unli harflar sonini qaytarsin.
 MASALAN: countVowels("string") return 1;
 */
 
- function unliTopish(str: string): number {
+ /* function unliTopish(str: string): number {
 
   const vowels: string[] = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 
@@ -22,7 +48,7 @@ MASALAN: countVowels("string") return 1;
 
   return count; 
 }
-console.log(unliTopish("O'zbekiston")); 
+console.log(unliTopish("O'zbekiston"));  */
 
 /* 
 Shunday function yozing, u string qabul qilsin va 
