@@ -52,6 +52,7 @@ class ProductService{
         return result;
 
     }
+  
 }
 
 export default ProductService
