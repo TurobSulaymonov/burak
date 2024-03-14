@@ -61,7 +61,7 @@ productController.getAllProducts = async (req: Request, res: Response) => {
     res.status(HttpCode.OK).json({data: result});
  
     } catch (err) {
-      console.log("Error, updateChosenProducts", err);
+      console.log("ERROR, updateChosenProducts", err);
       if(err instanceof Errors) res.status(err.code).json(err);
       else res.status(Errors.standard.code).json(Errors.standard);
     }
