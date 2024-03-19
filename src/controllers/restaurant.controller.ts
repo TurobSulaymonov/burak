@@ -65,8 +65,10 @@ restaurantController.getLogin = (req: Request, res: Response) => {
    restaurantController.procesLogin = async (req: AdminRequest, res: Response) => {
       try{
          console.log("processLogin");
+        // console.log("req.body", req.body);
+         //  throw new Error("Forced Stop");
            const input: LoginInput = req.body,
-              result = await memberService.procesLogin(input);
+                 result = await memberService.procesLogin(input);
          
          // TODO SESSIONS
 
@@ -80,7 +82,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
          console.log("Error, procesLogin", err);
          const message = 
          err instanceof Error ? err.message  : Message.SOMETHING_WENT_WRONG;
-         res.send(`<script>alert("${message}"): window.location.replace("admin/login")</script>`);
+         res.send(`<script>alert("${message}"); window.location.replace("/admin/login")</script>`);
       }
      };
       

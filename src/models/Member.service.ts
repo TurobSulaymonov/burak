@@ -12,7 +12,10 @@ import { shapeIntoMongooseObjectId } from "../libs/config";
    processSignup(newMember: MemberInput) {
       throw new Error("Method not implemented.");
    }
- 
+
+   
+
+  
     private readonly memberModel;
 
 constructor () {
@@ -118,8 +121,10 @@ public async getUsers(): Promise<Member[]> {
   const result = await this.memberModel
   .find({ memberType: MemberType.USER } )
   .exec();
-  if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
+  
+  if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+   
   return result;
 }
 public async updateChosenUsers(input: MemberUpdateInput): Promise<Member[]> {
