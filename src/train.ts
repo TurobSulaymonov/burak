@@ -12,7 +12,7 @@ function calculateSumOfNumbers(sonlar: any[]): number {
       } else {
           return ele;
       }
-  }, 0);
+  },0);
 return natija;
 
 }

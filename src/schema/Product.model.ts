@@ -1,4 +1,4 @@
-import mongoose, {Schema} from "mongoose";
+ import mongoose, {Schema} from "mongoose";
 import { ProductCollection,
     ProductSize,
      ProductStatus, 
@@ -58,7 +58,7 @@ const productSchema = new Schema (
      productViews:{
      type:Number,
      default: 0,
-     },
+   },
     
     },
     
@@ -67,8 +67,9 @@ const productSchema = new Schema (
 );
 
 productSchema.index(
-    { productName: 1, ProductSize: 1, ProductVolume: 1},
+    {  productName: 1, productSize: 1, productVolume: 1},
     {unique: true}
 );
 
-export default mongoose.model("Product", productSchema)
+export default mongoose.model("Product", productSchema);
+ 
