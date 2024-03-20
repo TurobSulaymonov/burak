@@ -37,6 +37,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
       
       try {
          console.log("proccesSignup");
+         console.log(req.body);
          const file = req.file;
          if(!file) 
          throw new Errors (HttpCode.BAD_REQUEST, Message.SOMETHING_WENT_WRONG )
@@ -58,7 +59,7 @@ restaurantController.getLogin = (req: Request, res: Response) => {
         console.log("Error, proccesSignup", err);
         const message = 
          err instanceof Error ? err.message  : Message.SOMETHING_WENT_WRONG;
-         res.send(`<script>alert("${message}"): window.location.replace("admin/signup")</script>`);
+         res.send(`<script>alert("${message}"); window.location.replace("/admin/signup")</script>`);
       }
    
     };

@@ -1,20 +1,24 @@
 
 
 console.log("Hello World");
+
+
+
+
  // N task
  /* 
   Shunday function yozing, u string qabul qilsin va 
   string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
 MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
  */
-function palindrom (string:string) {
+/* function palindrom (string:string) {
  const result = string.split("").reverse().join('');
  return result === string;
 
 
 }
 console.log(palindrom("kiyik"));
-console.log(palindrom("mother"));
+console.log(palindrom("mother")); */
 
 // M task
 /* 
