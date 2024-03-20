@@ -1,8 +1,24 @@
 
 
 console.log("Hello World");
+ // O task
+/* Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va 
+array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
+MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45 */
+function calculateSumOfNumbers(sonlar: any[]): number {
+  const natija = sonlar.reduce((ele: number, current: any) => {
+     if (typeof current === 'number' && !isNaN(current)) {
+          return ele + current;
+      } else {
+          return ele;
+      }
+  }, 0);
+return natija;
+
+}
 
 
+console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35]));
 
 
  // N task
