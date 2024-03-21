@@ -40,7 +40,7 @@ productController.updateChosenProducts);
 /*  User */
 
 routerAdmin.get(
-    "/users/all",
+    "/user/all",
      restaurantController.verifyRestaurant, 
      restaurantController.getUsers);
 
