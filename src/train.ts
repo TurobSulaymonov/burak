@@ -1,11 +1,41 @@
 
 
 console.log("Hello World");
- // O task
+ // P Task
+ /* 
+    Shunday function yozing, u object qabul qilsin va 
+    arrayni object arrayga otkazib arrayni qaytarsin qaytarsin.
+MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+ */
+
+function objectToArray(obj: Record<string, number>): [string, number][] {
+  let resultArray: [string, number][] = [];
+
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      resultArray.push([key, obj[key]]);
+    }
+  }
+
+  return resultArray;
+}
+
+const result = objectToArray({ a: 10, b: 20 });
+console.log(result);
+
+
+
+
+
+
+
+
+
+// O task
 /* Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va 
 array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
 MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45 */
-function calculateSumOfNumbers(sonlar: any[]): number {
+/* function calculateSumOfNumbers(sonlar: any[]): number {
   const natija = sonlar.reduce((ele: number, current: any) => {
      if (typeof current === 'number' && !isNaN(current)) {
           return ele + current;
@@ -18,7 +48,7 @@ return natija;
 }
 
 
-console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35]));
+console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35])); */
 
 
  // N task
