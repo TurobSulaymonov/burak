@@ -1,9 +1,4 @@
 console.log("Signup frontend javascript file");
-/* $(function(){
-    $(".member-nick").click(function(){
-        $(".member-phone").toggle();
-    });
-}); */
 
 $(function(){
     fileTarget = $(".file-box .upload-hidden");
@@ -11,10 +6,9 @@ $(function(){
     
     fileTarget.on("change", function(){
       if(window.FileReader) {
-        const uploadFile  = $(this) [0].files[0];
-        console.log("uploadFile", uploadFile);
-        const fileType = uploadFile["type"];
-        const validimageType =  ["image/jpg", "image/jpeg", "image/png"];
+        const uploadFile  = $(this) [0].files[0],
+               fileType = uploadFile["type"],
+               validimageType =  ["image/jpg", "image/jpeg", "image/png"];
         if(!validimageType.includes(fileType)) {
             alert("Please only jpg, jpeg and png!");
         }
@@ -34,11 +28,11 @@ $(function(){
 });
 
 function validateSignupForm(){
-    //console.log("EXECUTED validateSignupForm");
-    const memberNick = $(".member-nick").val();
-    const memberPhone = $(".member-phone").val();
-    const memberPassword = $(".member-password").val();
-    const confirmPassword= $(".confirm-password").val();
+   
+    const memberNick = $(".member-nick").val(),
+          memberPhone = $(".member-phone").val(),
+          memberPassword = $(".member-password").val(),
+          confirmPassword= $(".confirm-password").val();
 
     if( memberNick === "" ||
     memberPhone === "" ||
