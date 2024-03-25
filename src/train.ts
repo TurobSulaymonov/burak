@@ -1,6 +1,27 @@
 
 
 console.log("Hello World");
+// Q Task
+/* 
+    Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object,
+     ikkinchisi string. Agar string parametr objectni propertysi bolsa true bolmasa false qaytarsin.
+MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true;
+ hasProperty({name: "BMW", model: "M3"}, "year") return false
+
+*/
+function hasProperty(obj: any, prop: string): boolean {
+  for (let key in obj) {
+      if (key === prop) {
+          return true;
+      }
+  }
+  return false;
+}
+
+
+console.log(hasProperty({name: "BMW", model: "M3"}, "model")); 
+console.log(hasProperty({name: "BMW", model: "M3"}, "year")); 
+
  // P Task
  /* 
     Shunday function yozing, u object qabul qilsin va 
@@ -8,7 +29,7 @@ console.log("Hello World");
 MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
  */
 
-function objectToArray(obj: Record<string, number>): [string, number][] {
+/* function objectToArray(obj: Record<string, number>): [string, number][] {
   let resultArray: [string, number][] = [];
 
   for (let key in obj) {
@@ -22,7 +43,7 @@ function objectToArray(obj: Record<string, number>): [string, number][] {
 
 const result = objectToArray({ a: 10, b: 20 });
 console.log(result);
-
+ */
 
 
 
