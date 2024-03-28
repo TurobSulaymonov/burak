@@ -1,6 +1,61 @@
 
 
 console.log("Hello World");
+
+// R  Task 
+/* 
+Shunday function yozing, u string parametrga ega bolsin. 
+String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini 
+number holatda qaytarsin.
+MASALAN: calculate("1+3") return 4;
+
+
+*/
+
+
+
+ 
+ 
+
+function calculate(expression: string): number {
+  
+  const tokens = expression.split(/[+\-*/]/);
+  
+  const operators = expression.split('').filter(char => '+-*/'.includes(char));
+
+  let result = parseInt(tokens[0]);
+  for (let i = 0; i < operators.length; i++) {
+      const operator = operators[i];
+      const operand = parseInt(tokens[i + 1]);
+      if (operator === '+') {
+          result += operand;
+      } else if (operator === '-') {
+          result -= operand;
+      } else if (operator === '*') {
+          result *= operand;
+      } else if (operator === '/') {
+          result /= operand;
+      }
+  }
+
+  return result;
+}
+
+
+console.log(calculate("1+3"));
+
+
+
+
+
+
+function evos(qoshish: String): number {
+  throw new Error("Function not implemented.");
+}
+
+function evol(qoshish: String): number {
+  throw new Error("Function not implemented.");
+}
 // Q Task
 /* 
     Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object,
@@ -9,7 +64,7 @@ MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true;
  hasProperty({name: "BMW", model: "M3"}, "year") return false
 
 */
-function hasProperty(obj: any, prop: string): boolean {
+/* function hasProperty(obj: any, prop: string): boolean {
   for (let key in obj) {
       if (key === prop) {
           return true;
@@ -21,7 +76,7 @@ function hasProperty(obj: any, prop: string): boolean {
 
 console.log(hasProperty({name: "BMW", model: "M3"}, "model")); 
 console.log(hasProperty({name: "BMW", model: "M3"}, "year")); 
-
+ */
  // P Task
  /* 
     Shunday function yozing, u object qabul qilsin va 
