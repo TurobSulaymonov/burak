@@ -1,6 +1,24 @@
-
+// p task
+/* 
+Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va
+ osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
+MASALAN: missingNumber([3, 0, 1]) return 2 . typescriptda yechib ber */
 
 console.log("Hello World");
+
+function missingNumber(numbers: number[]): number {
+  const n = numbers.length;
+  let totalSum = (n * (n + 1)) / 2;
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+      sum += numbers[i];
+  }
+  return totalSum - sum;
+}
+
+
+console.log(missingNumber([3, 0, 1]));
+
 
 // R  Task 
 /* 
@@ -17,11 +35,11 @@ MASALAN: calculate("1+3") return 4;
  
  
 
-function calculate(expression: string): number {
+/* function calculate(expression: string): number {
   
-  const tokens = expression.split(/[+\-*/]/);
+  const tokens = expression.split(/[+\-/]/); 
   
-  const operators = expression.split('').filter(char => '+-*/'.includes(char));
+  const operators = expression.split('').filter(char => '+-/'.includes(char));
 
   let result = parseInt(tokens[0]);
   for (let i = 0; i < operators.length; i++) {
@@ -42,20 +60,14 @@ function calculate(expression: string): number {
 }
 
 
-console.log(calculate("1+3"));
+console.log(calculate("1+3")); */
 
 
 
 
 
 
-function evos(qoshish: String): number {
-  throw new Error("Function not implemented.");
-}
 
-function evol(qoshish: String): number {
-  throw new Error("Function not implemented.");
-}
 // Q Task
 /* 
     Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object,
