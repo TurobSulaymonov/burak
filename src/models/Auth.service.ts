@@ -13,7 +13,7 @@ class AuthService {
 
     public async createToken (payload: Member) {
         return new Promise ((resolve, reject ) => {
-           const duration = `${AUTH_TIMER}h`; 
+           const duration = `${AUTH_TIMER}`; 
            jwt.sign(payload, process.env.SECRET_TOKEN as string, {
             expiresIn: duration,}, (err, token) => {
                 if(err)

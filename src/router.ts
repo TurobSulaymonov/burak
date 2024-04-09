@@ -23,6 +23,9 @@ memberController.verifyAuth,
 );
 
 
+router.get("/member/top-users", memberController.getTopUsers)
+
+
 /** Product **/
 
 
