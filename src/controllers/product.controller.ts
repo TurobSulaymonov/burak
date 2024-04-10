@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import { T } from "../libs/types/common";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import ProductService from "../models/Product.service";
-import { AdminRequest } from "../libs/types/member";
+import { AdminRequest, ExtendedRequest } from "../libs/types/member";
 import { ProductInput, ProductInquiry } from "../libs/types/product";
 import { ProductCollection } from "../libs/enums/product.enum";
 
@@ -17,14 +17,10 @@ const productController: T = {};
 productController.getProducts = async(req: Request, res: Response) =>{
 console.log("getProducts");
 try{
-/*  const query = req.query;
-console.log("req,querry", query); 
-const params = req.params; 
-console.log("req.params",params)
- */
+
 
 const {page, order, limit, productCollection, search} = req.query;
-// console.log(`page: ${page}, order: ${order}, limit: ${limit} `);
+
 const inquiry: ProductInquiry = {
   order: String(order),
   page: Number(page),
@@ -43,6 +39,28 @@ catch (err) {
   else res.status(Errors.standard.code).json(Errors.standard);
   // res.json({ });  
 }
+};
+
+productController.getProduct = async(
+  req: ExtendedRequest,
+   res: Response
+  
+  ) =>{
+
+  console.log("getProduct");
+try{
+  const  { id } = req.params;
+  console.log("req.member", req.member );
+  const memberId = req.member?._id ?? null ,
+ result = await productService.getProduct(memberId, id); 
+  res.status(HttpCode.OK).json(result)
+}
+catch (err) {
+  console.log("Error, getProduct", err);
+  if(err instanceof Errors) res.status(err.code).json(err);
+  else res.status(Errors.standard.code).json(Errors.standard);
+  // res.json({ });  
+}
 }
 
 
@@ -52,7 +70,7 @@ productController.getAllProducts = async (req: Request, res: Response) => {
     try {
        console.log("getAllProducts");
        const data = await productService.getAllProducts();
-       // console.log("data", data);
+     
        res.render("products", {products: data});
      
  
