@@ -10,7 +10,7 @@ router.post("/member/login", memberController.login);
 router.post("/member/signup", memberController.signup);
 router.post("/member/logout", 
 memberController.verifyAuth,
-memberController.logout ); 
+memberController.logout); 
 
  router.get("/member/detail/", 
 memberController.verifyAuth,
@@ -24,11 +24,11 @@ memberController.verifyAuth,
 );
 
 
-router.get("/member/top-users", memberController.getTopUsers)
+router.get("/member/top-users", memberController.getTopUsers);
 
 
 /** Product **/
-
+router.get("/product/all", productController.getProducts);
 
 /** Order **/
 
