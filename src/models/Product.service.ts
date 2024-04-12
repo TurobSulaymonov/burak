@@ -38,7 +38,7 @@ class ProductService{
      : {[inquiry.order]: -1};
      const result = await this.productModel.aggregate([{$match: match},
       {$sort: sort},
-      {$skip: (inquiry.page * 1 -1) * inquiry.limit },
+      {$skip: (inquiry.page * 1 - 1) * inquiry.limit },
       {$limit: inquiry.limit * 1},
      ]) 
      .exec();

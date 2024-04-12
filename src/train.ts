@@ -1,4 +1,33 @@
 console.log("Hello World");
+// y Task
+/* 
+ Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
+ MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+*/
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  const intersection: number[] = [];
+
+
+  for (let i = 0; i < arr1.length; i++) {
+   
+      for (let j = 0; j < arr2.length; j++) {
+
+          if (arr1[i] === arr2[j] && !intersection.includes(arr1[i])) {
+              intersection.push(arr1[i]);
+          }
+      }
+  }
+
+  return intersection;
+}
+
+
+const array1 = [1, 2, 3];
+const array2 = [3, 2, 0];
+const result = findIntersection(array1, array2);
+console.log(result); 
+
+
 //  X TAsk
 /* 
 
@@ -8,7 +37,7 @@ Function string parametri object ichida necha marotaba takrorlanganligini qaytar
    bolsa ham sanasin)
  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
 */
-function countOccurrences(obj: any, key: string): number {
+/* function countOccurrences(obj: any, key: string): number {
   let count = 0;
 
   if (typeof obj === 'object' && obj !== null) {
@@ -25,7 +54,7 @@ function countOccurrences(obj: any, key: string): number {
 
 const testObj = {model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}};
 const keyToSearch = 'model';
-console.log(countOccurrences(testObj, keyToSearch)); 
+console.log(countOccurrences(testObj, keyToSearch));  */
 
 
 // W Task
