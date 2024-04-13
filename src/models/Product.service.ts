@@ -74,19 +74,19 @@ class ProductService{
                //  Insert View
               console.log("PLANNING TO INSERT NEW VIEW");
               await this.viewService.insertMemberView(input);
-            }
+            
               //Increase count
-              result = await this.productModel
+               result = await this.productModel
               .findByIdAndUpdate(productId,
-                {$inc: {productViews: +1} },
+                {$inc: { productViews: + 1} },
                 {new: true}
               )
               .exec();
 
-          
+            }
            }
           // TODO Of authticated users  => first => view log creation
-         
+          
           return result;
    }
 
