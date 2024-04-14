@@ -1,10 +1,29 @@
 console.log("Hello World");
+// Z task
+/* Shunday function yozing, uni sonlardan tashkil topgan array qabul qilsin. Function arraydagi juft sonlarni yigindisini qaytarsin
+MASALAN: sumEvens([1,2,3]) return 2 */
+function sumEvens(numbers: number[]): number {
+  let sum = 0; 
+  for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] % 2 === 0) {  
+          sum += numbers[i]; 
+      }
+  }
+  return sum; 
+}
+
+
+const result = sumEvens([1, 2, 3]);
+console.log(result);
+
+
+
 // y Task
 /* 
  Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
  MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
 */
-function findIntersection(arr1: number[], arr2: number[]): number[] {
+/* function findIntersection(arr1: number[], arr2: number[]): number[] {
   const intersection: number[] = [];
 
 
@@ -26,7 +45,7 @@ const array1 = [1, 2, 3];
 const array2 = [3, 2, 0];
 const result = findIntersection(array1, array2);
 console.log(result); 
-
+ */
 
 //  X TAsk
 /* 
