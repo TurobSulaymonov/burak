@@ -5,7 +5,7 @@ import { Order, OrderInquiry, OrderItemInput, OrderUpdateInput } from "../libs/t
 import { shapeIntoMongooseObjectId } from "../libs/config";
 import Errors, { HttpCode, Message } from "../libs/Errors";
 import {ObjectId} from "mongoose";
-import { OrderStatus } from "../libs/enums/order,enum";
+import { OrderStatus } from "../libs/enums/order.enum";
 import MemberService from "./Member.service";
 
 
@@ -25,14 +25,16 @@ class OrderService{
         member: Member,
         input: OrderItemInput[]
     ): Promise<Order>{
-        // console.log("input:", input)
+    console.log("input:", input)
        const memberId = shapeIntoMongooseObjectId(member._id);
        const amount = input.reduce((accumulator: number, item: OrderItemInput ) => {
         return accumulator + item.itemPrice * item.itemQuantity
        }, 0); 
         
        const delivery = amount < 100 ? 5 : 0; 
-       // console.log("values", amount, delivery );
+        console.log("QIYMATI", amount,  delivery );
+    
+    
        try{
         // database validitoin dan kelaydigon hatoliklarga customizer kodlarni kiritish uchun 
          const newOrder: Order =  await this.orderModel.create({
@@ -41,16 +43,18 @@ class OrderService{
             memberId: memberId,
          });
          const orderId = newOrder._id;
-         console.log("orderId:", newOrder._id)
-          await this.recordOrderItem(orderId, input);
-        
+        // console.log("orderId:", newOrder._id)
+        console.log("QIYMATI", amount,  delivery );
+           await this.recordOrderItem(orderId, input);
+          
          //TODO create order item
          return newOrder;
        }catch(err){
             console.log("ERROR, model:createOrder:", err)
             throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
-       }
+       } 
    }
+   
    private async recordOrderItem (
     orderId: ObjectId,
     input: OrderItemInput[]
@@ -64,7 +68,7 @@ class OrderService{
      console.log("PromisedList", promisedList);
      const orderitemsState = await Promise.all(promisedList);
      console.log("orderItemsState:", orderitemsState );
-   }
+   } 
 
    public async getMyOrders (
     member:Member,
@@ -90,7 +94,14 @@ class OrderService{
         localField: "orderItems.productId",
         foreignField: "_id",
         as: "productData"
-       }}
+       }},
+       { $lookup: {
+        from: "members",
+        localField: "memberId",
+        foreignField: "_id",
+        as: "memberData"
+       }},
+     
     ])
     .exec();
 
@@ -108,7 +119,7 @@ const memberId = shapeIntoMongooseObjectId(member._id),
 
   const result = await this.orderModel.findOneAndUpdate(
     {
-        memberId: memberId,
+        memberId: memberId,      // idlani filtr qilib berobti
     _id: orderId, },
     { orderStatus: orderStatus},
     {new: true}

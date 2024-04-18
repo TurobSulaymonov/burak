@@ -4,7 +4,8 @@ import Errors, { HttpCode } from "../libs/Errors";
 import { Response } from "express";
 import OrderService from "../models/Order.service";
 import { OrderInquiry, OrderUpdateInput } from "../libs/types/order";
-import { OrderStatus } from "../libs/enums/order,enum";
+import { OrderStatus } from "../libs/enums/order.enum";
+
 const orderService = new OrderService();
 const orderController: T = {};
 
@@ -15,7 +16,7 @@ const orderController: T = {};
          console.log("createOrder");
 
          const result = await orderService.createOrder(req.member, req.body)
-   
+        
 
        res.status(HttpCode.CREATED).json(result)
       }  catch (err) {
@@ -39,7 +40,7 @@ const orderController: T = {};
            }
            console.log ("Inquiry:", inquiry);
            const result = await orderService.getMyOrders(req.member, inquiry);
-
+        
            
            res.status(HttpCode.CREATED).json(result)
         }  catch (err) {
@@ -56,7 +57,7 @@ const orderController: T = {};
 
            const result = await orderService.updateOrder(req.member, input);
           
-
+           console.log("Input" , input) 
         res.status(HttpCode.CREATED).json(result)
         } catch (err) {
           console.log("ERROR, updateOrder", err);
