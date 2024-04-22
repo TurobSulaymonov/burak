@@ -15,7 +15,7 @@ export interface Member {
     memberImage?: string;
     memberPoints: number;
     createdAt: Date;
-    updateAt: Date;
+    update: Date;
 }
 
 export interface MemberInput {
@@ -47,7 +47,6 @@ memberImage?: string;
 }
 export interface ExtendedRequest extends Request{
   member: Member;
-  
   file: Express.Multer.File;
   files: Express.Multer.File[];
 }
