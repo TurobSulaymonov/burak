@@ -1,11 +1,34 @@
 console.log("Hello World");
+/* 
+ZE-TASK:
+
+Shunday function yozing, uni  string parametri bolsin. 
+String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
+MASALAN: removeDuplicate('stringg') return 'string'
+*/
+
+function removeDuplicate(str: string | []) {
+  let seen = new Set();
+  let result = [];
+  for (let char of str) {
+      if (!seen.has(char)) {
+          seen.add(char);
+          result.push(char);
+      }
+  }
+  return result.join('');
+}
+console.log(removeDuplicate("assalom ozbekiston"))
+
+
+
 /* ZD-TASK:
 
 Shunday function yozing, uni number, array va 
 number parametrlari bolsin va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin
 MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2] */
 
-function changeNumberInArray(index: number, array: number[], newValue: number): number[] {
+/* function changeNumberInArray(index: number, array: number[], newValue: number): number[] {
 
   if (index < 0 || index >= array.length) {
       return array;
@@ -19,7 +42,7 @@ function changeNumberInArray(index: number, array: number[], newValue: number): 
 }
 
 
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 2)); 
+console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));  */
 
 
 // zc Task
