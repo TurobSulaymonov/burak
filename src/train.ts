@@ -1,5 +1,28 @@
 console.log("Hello World");
 /* 
+ZF-TASK:
+
+Shunday function yozing, uni string parametri bolsin. String ichidagi
+ har bir sozni bosh harflarini katta harf qilib qaytarsin lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin.
+MASALAN: capitalizeWords('name should be a string') return 'Name Should be a String'
+*/
+function capitalizeWords(input: string): string {
+
+  const words = input.split(' ');
+     const transformedWords = words.map(word => {
+    if (word.length > 2) {
+     return word[0].toUpperCase() + word.substring(1).toLowerCase();
+    } else {
+      return word;
+    }
+  });
+   return transformedWords.join(' ');
+}
+const natija = capitalizeWords('name should be a string');
+console.log("natija:" , natija); 
+
+/* 
+
 ZE-TASK:
 
 Shunday function yozing, uni  string parametri bolsin. 
@@ -7,7 +30,7 @@ String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
 MASALAN: removeDuplicate('stringg') return 'string'
 */
 
-function removeDuplicate(str: string | []) {
+/* function removeDuplicate(str: string | []) {
   let seen = new Set();
   let result = [];
   for (let char of str) {
@@ -18,7 +41,7 @@ function removeDuplicate(str: string | []) {
   }
   return result.join('');
 }
-console.log(removeDuplicate("assalom ozbekiston"))
+console.log(removeDuplicate("assalom ozbekiston")) */
 
 
 
