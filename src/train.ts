@@ -1,12 +1,33 @@
 console.log("Hello World");
 /* 
+Shunday function yozing, u berilgan string parametrni snake casega otkazib qaytarsin. 
+MASALAN: modifyWords('name should be a string') return 'name_should_be_a_string'
+*/
+function modifyWords(input: string): string {
+  let result = '';
+  for (let i = 0; i < input.length; i++) {
+      const char = input[i];
+      if (char === ' ') {
+          result += '_';  
+      } else {
+          result += char; 
+      }
+  }
+  return result;
+}
+
+
+console.log(modifyWords('name should be a string')); 
+
+
+/* 
 ZF-TASK:
 
 Shunday function yozing, uni string parametri bolsin. String ichidagi
  har bir sozni bosh harflarini katta harf qilib qaytarsin lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin.
 MASALAN: capitalizeWords('name should be a string') return 'Name Should be a String'
 */
-function capitalizeWords(input: string): string {
+/* function capitalizeWords(input: string): string {
 
   const words = input.split(' ');
      const transformedWords = words.map(word => {
@@ -19,7 +40,7 @@ function capitalizeWords(input: string): string {
    return transformedWords.join(' ');
 }
 const natija = capitalizeWords('name should be a string');
-console.log("natija:" , natija); 
+console.log("natija:" , natija);  */
 
 /* 
 
