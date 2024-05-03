@@ -1,9 +1,34 @@
 console.log("Hello World");
+/*Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
+MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]*/
+
+
+function findDisappearedNumbers(nums: number[]): number[] {
+  const n: number = nums.length;
+  const result: number[] = [];
+ for (let i: number = 0; i < n; i++) {
+      const index: number = Math.abs(nums[i]) - 1;
+
+      if (nums[index] > 0) {
+          nums[index] = -nums[index];
+      }
+  }
+ for (let i: number = 0; i < n; i++) {
+      if (nums[i] > 0) {
+          result.push(i + 1);
+      }
+  }
+
+  return result;
+}
+console.log(findDisappearedNumbers([1, 3, 4, 7])); 
+
+
 /* 
 Shunday function yozing, u berilgan string parametrni snake casega otkazib qaytarsin. 
 MASALAN: modifyWords('name should be a string') return 'name_should_be_a_string'
 */
-function modifyWords(input: string): string {
+/* function modifyWords(input: string): string {
   let result = '';
   for (let i = 0; i < input.length; i++) {
       const char = input[i];
@@ -17,7 +42,7 @@ function modifyWords(input: string): string {
 }
 
 
-console.log(modifyWords('name should be a string')); 
+console.log(modifyWords('name should be a string'));  */
 
 
 /* 
