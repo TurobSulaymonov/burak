@@ -1,9 +1,24 @@
-console.log("Hello World");
+console.log("Hello World!");
+/* 
+ZI-TASK:
+
+Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
+MASALAN: delayHelloWorld("Hello World") return "Hello World"
+*/
+function delayHelloWorld() {
+  setTimeout(function() {
+      console.log("Hello World");
+  }, 3000); 
+}
+
+delayHelloWorld(); 
+
+
 /*Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
 MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]*/
 
 
-function findDisappearedNumbers(nums: number[]): number[] {
+/* function findDisappearedNumbers(nums: number[]): number[] {
   const n: number = nums.length;
   const result: number[] = [];
  for (let i: number = 0; i < n; i++) {
@@ -21,7 +36,7 @@ function findDisappearedNumbers(nums: number[]): number[] {
 
   return result;
 }
-console.log(findDisappearedNumbers([1, 3, 4, 7])); 
+console.log(findDisappearedNumbers([1, 3, 4, 7]));  */
 
 
 /* 
