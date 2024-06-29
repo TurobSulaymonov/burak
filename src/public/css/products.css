@@ -6,29 +6,48 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303bf, #e37813, #011c1aba, #968383);
+  background: crimson;
 }
 
-.products-container a {
+
+
+.navbar {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  color: #fff;
+  position: relative;
+}
+
+.navbar ul li a {
   text-decoration: none;
-  color: #000000;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 30px;
 }
 
-.products-container .nav-item a {
-  color: #e3c08d;
+.navbar ul li::after{
+ content: '';
+ height: 3px;
+ width: 0;
+ background: #FFF;
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ transition: 0.5s;
 }
 
-.products-container .nav-item a.disabled {
-  color: #898071;
-}
-
-.products-container .navigation-menu {
-  position: absolute;
-  z-index: 10000;
-  top: 1%;
-  color: #efefee;
-  font-size: 40px;
-  font-family: monospace;
+.navbar ul li:hover::after{
+  width: 100%;
+  
 }
 
 .products-container .restaurant-menu-frame {
@@ -36,7 +55,6 @@
   padding-bottom: 80px;
   width: 100%;
   height: auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;

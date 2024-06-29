@@ -8,3 +8,4 @@ export enum MemberType {
     BLOCK = "BLOCK",
     DELETE = "DELETE",
   }
+  

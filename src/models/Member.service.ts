@@ -38,9 +38,7 @@ return result;
 
 } 
 
-
-
- public async signup(input: MemberInput): Promise<Member> {
+public async signup(input: MemberInput): Promise<Member> {
   const exist = await this.memberModel
   const salt = await bcrypt.genSalt();
   input.memberPassword = await bcrypt.hash(input.memberPassword, salt); 

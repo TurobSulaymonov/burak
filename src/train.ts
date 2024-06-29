@@ -1,4 +1,19 @@
 console.log("Hello World!");
+function printNumber() {
+  let currentNumber = 1;
+  const intervalId = setInterval(() => {
+      console.log(currentNumber);
+      currentNumber++;
+      if (currentNumber > 5) {
+          clearInterval(intervalId); 
+      }
+  }, 1000);
+}
+
+
+setTimeout(printNumber, 5000);
+
+
 
 /* 
 ZJ-TASK:
@@ -7,7 +22,7 @@ Shunday function yozing, u berilgan arrayni ichidagi numberlarni qiymatini hisob
 MASALAN: reduceNestedArray([1, [1, 2, [4]]]) return 8
 */
 
-function reduceNestedArray(input: Array<number | Array<any>>): number {
+/* function reduceNestedArray(input: Array<number | Array<any>>): number {
   let total = 0;
     for (const element of input) {
         if (Array.isArray(element)) {
@@ -19,20 +34,20 @@ function reduceNestedArray(input: Array<number | Array<any>>): number {
     return total;
 } 
 const result = reduceNestedArray([1, [1, 2, [4]]]);
-console.log(result);
+console.log(result); */
 /* 
 ZI-TASK:
 
 Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
 MASALAN: delayHelloWorld("Hello World") return "Hello World"
 */
-function delayHelloWorld() {
+/* function delayHelloWorld() {
   setTimeout(function() {
       console.log("Hello World");
   }, 3000); 
 }
 
-delayHelloWorld(); 
+delayHelloWorld();  */
 
 
 /*Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
