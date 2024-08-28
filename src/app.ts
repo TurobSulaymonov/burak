@@ -70,7 +70,7 @@ const io = new SocketIOServer(server, {
   let summaryclient = 0;
   io.on("connection", (socket) => {
    summaryclient++;
-   console.log(`Connection& total [${summaryclient}]`);
+   console.log(`Connection & total [${summaryclient}]`);
 
    socket.on("Disconeect", () => {
     summaryclient--;
