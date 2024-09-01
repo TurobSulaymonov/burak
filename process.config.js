@@ -3,7 +3,7 @@ module.exports = {
       name   : "BURAK",
       cwd: "./",
       script : "./dist/server.js",
-      false: false,
+      watch: false,
       env_production: {
          NODE_ENV: "production"
       },
